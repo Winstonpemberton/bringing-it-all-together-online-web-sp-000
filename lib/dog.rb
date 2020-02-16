@@ -50,11 +50,13 @@ class Dog
   end
 
   def self.new_from_db(row)
-    id = row[0]
-    name = row[1]
-    grade = row[2]
-    new_student = self.new(name, grade, id)
-    new_student
+    attributes_hash {
+      :id => row[0]
+      :name => row[1]
+      :breed => row[2]
+    }
+    dog = self.new(attributes_hash)
+    dog
   end
 
 
