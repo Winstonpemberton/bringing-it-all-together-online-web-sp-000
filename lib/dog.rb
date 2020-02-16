@@ -70,6 +70,18 @@ class Dog
     end.first
   end
 
+  def self.find_by_name(id)
+    sql = <<-SQL
+      Select * From dogs
+      Where id = ?
+      Limit 1
+    SQL
+
+    DB[:conn].execute(sql, id).map do |row|
+      self.new_from_db(row)
+    end.first
+  end
+
 
 
 end
