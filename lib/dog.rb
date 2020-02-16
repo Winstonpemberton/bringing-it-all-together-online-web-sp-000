@@ -3,7 +3,6 @@ class Dog
 
   def initialize(attributes)
     attributes.each {|key, value| send(("#{key}="), value)}
-    # id || = nil
   end
 
   def self.create_table
