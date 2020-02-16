@@ -87,7 +87,7 @@ class Dog
     if !dog_array.empty?
       dog = self.new_from_db(dog_array)
     else
-      dog = self.create({name: => name, album: => album})
+      dog = self.create({:name => name, :album => album})
     end
     dog
   end
