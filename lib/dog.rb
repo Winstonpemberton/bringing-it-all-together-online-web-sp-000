@@ -56,8 +56,8 @@ class Dog
       :breed => row[2]
     }
     dog = self.new(attributes_hash)
-    dog
   end
+
 
 
 end
